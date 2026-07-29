@@ -1,0 +1,20 @@
+[
+    {
+        "query": " Which city was exhumed from mass graves of bodies near Kyiv?",
+        "ground_truth_chunk_ids": ["7cfe075f_chunk_0013", "7cfe075f_chunk_0000"],
+        "ground_truth_answer": "in bucha, for example , 30 km north of Kyiv more than 450 bodies were exhumed from mass graves",
+        "video_source": "Ukraine war-crimes investigators run short on time and money"
+    },
+    {
+        "query": "TOP TAKEAWAYS FROM THE UKRAINE RECOVERY CONFERENCE",
+        "ground_truth_chunk_ids": ["6d053f5d_chunk_0005","6d053f5d_chunk_0011"],
+        "ground_truth_answer": "Nearly 200 agreements, understandings, and letters of intent were signed at the Ukraine Recovery Conference in Gdańsk, which drew around 7,500 participants, 70 state delegations, and 30 international organizations.",
+        "video_source": "State of Emergency in Crimea after massive Ukrainian strike | World News Tonight"
+    },
+    {
+        "query": "Which high-ranking Ukraninan officer has been announced to prison for whole life",
+        "ground_truth_chunk_ids": ["39e959bb_chunk_0037", "39e959bb_chunk_0000"],
+        "ground_truth_answer": "A former high-ranking Ukrainian intelligence officer, Dmytro Kozyura, has been sentenced to life in prison for spying for Russia. Once a counter-terrorism chief in Kyiv's security service, he was convicted of high treason for sharing state secrets with Moscow. ",
+        "video_source": "How Russia turns Ukrainians into spies | Global News Podcast"
+    }
+]

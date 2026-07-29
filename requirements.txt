@@ -1,0 +1,12 @@
+streamlit
+python-dotenv
+qdrant-client
+langgraph
+langfuse
+torch
+torchvision
+numpy
+sentence-transformers
+ollama
+yt-dlp
+openai-whisper
