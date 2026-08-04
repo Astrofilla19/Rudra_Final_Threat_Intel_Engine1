@@ -1,4 +1,3 @@
-# app.py
 import streamlit as st
 import traceback
 from pathlib import Path
@@ -10,7 +9,11 @@ from utils.semantic_chunker import generate_semantic_chunks
 from utils.vector_store import ingest_to_vector_store
 from threat_intel_engine import stream_intelligence_query
 from run_eval_pipeline import run_automated_evaluation
-from eval_generation import evaluate_generation  # [NEW] Importing your evaluator
+from eval_generation import evaluate_generation
+
+# [NEW] Qdrant client to dynamically fetch source lists
+from qdrant_client import QdrantClient
+from config import DB_DIR, COLLECTION_NAME
 
 # --- PAGE CONFIGURATION ---
 st.set_page_config(
@@ -25,6 +28,26 @@ st.markdown("**S**ystem for **U**nified **R**etrieval, **A**ssessment, & **K**no
 # Initialize Chat History in Session State
 if "messages" not in st.session_state:
     st.session_state.messages = []
+
+# [NEW] Cache function to quickly scan Qdrant and find all ingested sources
+@st.cache_data(ttl=10)
+def get_available_sources():
+    try:
+        client = QdrantClient(path=str(DB_DIR))
+        if not client.collection_exists(COLLECTION_NAME):
+            return []
+        
+        # Scroll through the collection to grab unique video titles
+        records, _ = client.scroll(
+            collection_name=COLLECTION_NAME,
+            limit=10000,
+            with_payload=["video_title"],
+            with_vectors=False
+        )
+        sources = set(record.payload.get("video_title") for record in records if record.payload and "video_title" in record.payload)
+        return sorted(list(sources))
+    except Exception:
+        return []
 
 # --- SIDEBAR: DATA INGESTION & EVALUATION ---
 with st.sidebar:
@@ -63,6 +86,27 @@ with st.sidebar:
             status_text.text("Batch Processing Complete!")
             st.balloons()
             
+            # Flush the cache so newly ingested videos immediately appear in the filter list
+            get_available_sources.clear()
+            
+    st.markdown("---")
+    
+    # --- NEW: SOURCE FILTERING DASHBOARD ---
+    st.header("🎯 Filter Intelligence Sources")
+    st.markdown("Select specific videos to restrict the engine's search parameters.")
+    
+    available_sources = get_available_sources()
+    if available_sources:
+        selected_sources = st.multiselect(
+            "Active Threat Intel Feeds:",
+            options=available_sources,
+            default=[],
+            help="Leave empty to search across all ingested videos."
+        )
+    else:
+        st.info("No sources available. Please ingest a target feed first.")
+        selected_sources = []
+
     st.markdown("---")
     
     st.header("📊 Batch System Evaluation")
@@ -101,7 +145,8 @@ if prompt := st.chat_input("Ask a Threat Intelligence Query..."):
     with st.chat_message("assistant"):
         # Create an empty dictionary to catch the retrieved Qdrant context
         captured_context = {}
-        stream = stream_intelligence_query(prompt, out_context=captured_context)
+        # Feed the selected sources into the intelligence query constraints
+        stream = stream_intelligence_query(prompt, out_context=captured_context, selected_videos=selected_sources)
         response = st.write_stream(stream)
         
     st.session_state.messages.append({"role": "assistant", "content": response})
@@ -113,7 +158,7 @@ if prompt := st.chat_input("Ask a Threat Intelligence Query..."):
         "response": response
     }
 
-# --- NEW: REAL-TIME ONLINE EVALUATION PANEL ---
+# --- REAL-TIME ONLINE EVALUATION PANEL ---
 if "latest_eval_data" in st.session_state and st.session_state.latest_eval_data["context"]:
     st.markdown("---")
     with st.expander("⚖️ Real-Time Response Evaluation (LLM-as-a-Judge)", expanded=True):

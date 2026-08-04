@@ -3,7 +3,8 @@ import json
 import ollama
 from typing import TypedDict, List, Dict, Any, Generator
 from sentence_transformers import SentenceTransformer
-from qdrant_client import QdrantClient
+from qdrant_client import QdrantClient, models
+
 from langgraph.graph import StateGraph, END
 
 # 1. IMPORT CONFIG FIRST (This injects the keys into os.environ)
@@ -22,6 +23,7 @@ from langfuse import observe
 # ---------------------------------------------------------
 class AgentState(TypedDict):
     query: str
+    selected_videos: List[str]  # [NEW] State variable for metadata filtering
     documents: List[Dict[str, Any]]
     is_multi_video: bool
     context_str: str
@@ -37,15 +39,29 @@ def get_qdrant_client() -> QdrantClient:
 @observe(name="Qdrant_Vector_Retrieval")
 def retrieve_node(state: AgentState) -> Dict[str, Any]:
     query = state["query"]
+    selected_videos = state.get("selected_videos", [])
     client = get_qdrant_client()
 
     model = SentenceTransformer(EMBEDDING_MODEL_NAME)
     query_vector = model.encode(query, show_progress_bar=False).tolist()
 
+    # [NEW] Apply hard metadata boundaries if specific videos are selected
+    query_filter = None
+    if selected_videos:
+        query_filter = models.Filter(
+            must=[
+                models.FieldCondition(
+                    key="video_title",
+                    match=models.MatchAny(any=selected_videos),
+                )
+            ]
+        )
+
     try:
         response = client.query_points(
             collection_name=COLLECTION_NAME,
             query=query_vector,
+            query_filter=query_filter,  # Apply the payload filter
             limit=10,
         )
         search_results = response.points
@@ -78,7 +94,7 @@ def retrieve_node(state: AgentState) -> Dict[str, Any]:
     unique_videos = list(video_groups.keys())
     is_multi_video = len(unique_videos) > 1
 
-    # 🛑 NEW UNIFIED CONTEXT BUILDER
+    # 🛑 UNIFIED CONTEXT BUILDER
     context_blocks = []
     
     # Iterate through all videos and their respective chunks
@@ -109,7 +125,7 @@ def generate_node(state: AgentState) -> Dict[str, Any]:
             "generation": "❌ Analytical indicators failed to uncover matching entities in the vector store."
         }
 
-    # 🛑 NEW STRICT SYSTEM PROMPT
+    # 🛑 STRICT SYSTEM PROMPT
     system_prompt = """
 You are an advanced Cyber Threat Intelligence Reasoning Engine.
 
@@ -172,6 +188,7 @@ def run_intelligence_query(query: str) -> str:
     
     initial_state: AgentState = {
         "query": query,
+        "selected_videos": [],
         "documents": [],
         "is_multi_video": False,
         "context_str": "",
@@ -188,14 +205,22 @@ def run_intelligence_query(query: str) -> str:
 
 
 @observe(name="Stream_UI_Query_Pipeline")
-def stream_intelligence_query(query: str, out_context: dict = None) -> Generator[str, None, None]:
+def stream_intelligence_query(query: str, out_context: dict = None, selected_videos: List[str] = None) -> Generator[str, None, None]:
+    # Inject the user's selected video constraints into the starting state
     retrieval_output = retrieve_node(
-        {"query": query, "documents": [], "is_multi_video": False, "context_str": "", "generation": ""}
+        {
+            "query": query, 
+            "selected_videos": selected_videos or [], 
+            "documents": [], 
+            "is_multi_video": False, 
+            "context_str": "", 
+            "generation": ""
+        }
     )
     
     context = retrieval_output.get("context_str", "")
 
-    # [NEW]: This allows Streamlit to silently capture the context for evaluation!
+    # This allows Streamlit to silently capture the context for evaluation!
     if out_context is not None:
         out_context["text"] = context
 
@@ -203,7 +228,7 @@ def stream_intelligence_query(query: str, out_context: dict = None) -> Generator
         yield "❌ Analytical indicators failed to uncover matching entities in Qdrant."
         return
 
-    # 🛑 NEW STRICT SYSTEM PROMPT (Same as CLI)
+    # 🛑 STRICT SYSTEM PROMPT (Same as CLI)
     system_prompt = """
 You are an advanced Cyber Threat Intelligence Reasoning Engine.
 

@@ -1,0 +1,97 @@
+[
+  {
+    "query": "What did Iran's defense chief say Iran's historical response has been to American actions?",
+    "ground_truth_chunk_texts": [
+      "the Americans. In 1979, during the eight years of the sacred defense, especially toward its final years, we witnessed their direct crimes. Each time they committed a crime, they received a",
+      "decisive response, and this time will be no different."
+    ],
+    "ground_truth_answer": "Iran's defense chief said that throughout Iran's history, including since 1979 and the eight years of the Iran-Iraq war, every time the Americans committed a crime against Iran they received a decisive response, and warned this time would be no different.",
+    "video_source": "Iran defense chief warns of 'decisive response' to US strikes",
+    "video_title_guess": "Iran defense chief warns of 'decisive response' to US strikes"
+  },
+  {
+    "query": "What joint military action did the US and Saudi Arabia take against militia in Iraq?",
+    "ground_truth_chunk_texts": [
+      "Hours earlier, US Central Command said it had worked with Saudi Arabia to strike sites in Iraq used by Tehran-backed militia to launch attacks in recent days."
+    ],
+    "ground_truth_answer": "Hours before Iran launched missiles at American forces, US Central Command said it had worked with Saudi Arabia to strike sites in Iraq used by Tehran-backed militia that had been launching attacks in recent days.",
+    "video_source": "'Surprise attack' by Iran | Sean Bell analysis",
+    "video_title_guess": "'Surprise attack' by Iran | Sean Bell analysis"
+  },
+  {
+    "query": "How far into the US-Iran war are things, and how close are the US midterm elections?",
+    "ground_truth_chunk_texts": [
+      "November. We're now... I think it's day 152 of the war. And it's only 100 days to those midterms. We're well over halfway towards those midterms. For many politicians, they'll be looming much closer. President Trump's polling is dropping at the moment,"
+    ],
+    "ground_truth_answer": "According to the analysis, it is around day 152 of the war, with only about 100 days remaining until the US midterm elections, meaning the country is well over halfway to the midterms and President Trump's polling is dropping.",
+    "video_source": "'Surprise attack' by Iran | Sean Bell analysis",
+    "video_title_guess": "'Surprise attack' by Iran | Sean Bell analysis"
+  },
+  {
+    "query": "Why did the US pause its nightly strikes on Iran, breaking its previous streak?",
+    "ground_truth_chunk_texts": [
+      "Iran reported no U.S. strikes overnight. Meanwhile, President Trump reportedly ordered the U.S. military not to conduct attacks on Friday, according to Axios.",
+      "This broke a 13-night streak of nightly strikes."
+    ],
+    "ground_truth_answer": "Iran reported no US strikes overnight, as President Trump reportedly ordered the US military not to conduct attacks on Friday according to Axios, breaking a 13-night streak of nightly strikes.",
+    "video_source": "U.S. military pauses nightly Iran strikes",
+    "video_title_guess": "U.S. military pauses nightly Iran strikes"
+  },
+  {
+    "query": "Why are US officials investigating whether Russia is helping Iran target CIA facilities?",
+    "ground_truth_chunk_texts": [
+      "But specifically with this report, what did you learn U.S. officials are looking into? So multiple CIA facilities, and obviously their locations are clandestine, but for our sourcing, multiple CIA facilities in the Middle East have been attacked by Iranian drones during this war. There was one in the Saudi capital, Riyadh, one in eastern Iraq."
+    ],
+    "ground_truth_answer": "Multiple CIA facilities in the Middle East, including one in Riyadh and one in eastern Iraq, have been attacked by Iranian drones during the war, prompting US officials to investigate whether Russia aided the strikes by providing targeting information.",
+    "video_source": "U.S. military pauses nightly Iran strikes",
+    "video_title_guess": "U.S. military pauses nightly Iran strikes"
+  },
+  {
+    "query": "Has Saudi Arabia publicly claimed responsibility for any strikes since the war with Iran began?",
+    "ground_truth_chunk_texts": [
+      "U.S. and Saudi warplanes, now this is by CENTCOM, have carried out strikes against Iran-backed militants in Iraq who launched more than two dozen drone attacks in recent days. The Saudi-Pakistan defense pact is now directly relevant and questions Pakistan's mediator role even more. Now, this is the first time Saudi Arabia has publicly claimed responsibility"
+    ],
+    "ground_truth_answer": "US and Saudi warplanes carried out strikes against Iran-backed militants in Iraq who had launched more than two dozen drone attacks in recent days, marking the first time Saudi Arabia has publicly claimed responsibility for any strike since the war began.",
+    "video_source": "US, Saudi Launch Strikes On Iran-Aligned Targets In Iraq After Wave Of Attacks In 'Last 72 Hours'",
+    "video_title_guess": "US, Saudi Launch Strikes On Iran-Aligned Targets In Iraq After Wave Of Attacks In 'Last 72 Hours'"
+  },
+  {
+    "query": "Which US military installations did the US quietly relocate troops away from, and why?",
+    "ground_truth_chunk_texts": [
+      "U.S. and Iran are top focus at this hour. Amid growing hostility with Iran, a newly surfaced report suggests that U.S. has quietly relocated several hundred service members from major installations in Qatar and Bahrain. Mind you, Qatar, the Al-Odehid base where U.S. troops are stationed, it was targeted towards the end of the 12-day war last year in June by Iran. Now,"
+    ],
+    "ground_truth_answer": "The US quietly relocated several hundred service members from major installations in Qatar and Bahrain, including the Al Udeid base in Qatar, which had previously been targeted by Iran toward the end of the 12-day war in June.",
+    "video_source": "US-Iran Tensions: US Relocates Troops from Qatar, Bahrain Bases to Reduce Risk | WION",
+    "video_title_guess": "US-Iran Tensions: US Relocates Troops from Qatar, Bahrain Bases to Reduce Risk | WION"
+  },
+  {
+    "query": "What makes Iran's Kheibar Shekan missile difficult for American air defenses to intercept?",
+    "ground_truth_chunk_texts": [
+      "And that is where the Khyber Shekhan enters the picture. The Iranian missile is relatively compact.",
+      "It is mobile. It is designed for precision. And its biggest advantage may be the way it flies. According to reports, the Khyber Shekhan can combine different flight paths,"
+    ],
+    "ground_truth_answer": "The Kheibar Shekan is a relatively compact, mobile missile designed for precision, and its biggest advantage is that it can combine different flight paths, maneuvers and speeds, making it harder for air defense systems to predict exactly where it is heading.",
+    "video_source": "US-Iran War: Iran's Kheibar Shekan Missile Beats American Air Defences | WION Fineprint",
+    "video_title_guess": "US-Iran War: Iran's Kheibar Shekan Missile Beats American Air Defences | WION Fineprint"
+  },
+  {
+    "query": "Did the US block Israel from striking Iran's energy infrastructure, and why?",
+    "ground_truth_chunk_texts": [
+      "Has Donald Trump just stopped his closest ally from launching a strike that could have plunged the world into an oil crisis? A remarkable statement from Israel's defense minister has pulled back the curtain on high-level disagreements between Washington and Jerusalem. Israel's defense minister Israel Kotz has claimed that the Israeli military was ready",
+      "We very much want to strike Iran's energy targets. The United States is not approving it at the moment because of the concern that Iran would attack neighboring countries causing a global oil crisis. As far as we're concerned, we're prepared to set Iran back 40 years. Netanyahu is set to meet Trump at the White House, the first since the war with Iran began. There have been reports of a purported rift between both the leaders amid the conflict. Netanyahu reportedly struggled for a meeting with Trump as the Washington diplomatic channels asked the Israeli Prime Minister not to arrive in the United States empty-handed. Did Donald Trump arm-twist Benjamin Netanyahu into making a major concession just to meet him at the White House? As the Israeli Prime Minister lands in Washington for his meeting with the US President, a bombshell news report has sparked fresh speculations about the ties between the two allies purportedly strained amid the Iran war. According to Israel's Channel 12, Netanyahu struggled to secure a meeting with US President Donald Trump until Washington sent a clear message. According to the Channel 12 report, the diplomatic channels told the Israeli government, and I quote,"
+    ],
+    "ground_truth_answer": "Washington reportedly stopped Israel from launching a strike on Iran's energy infrastructure that could have plunged the world into an oil crisis, with Israeli minister Kotz saying Israel wants to strike Iran's energy targets but the United States is not approving it at the moment.",
+    "video_source": "US 'Shoots Down' Israel's Mission: Netanyahu SEETHES As Trump Blocks New Iran Attack Plan",
+    "video_title_guess": "US 'Shoots Down' Israel's Mission: Netanyahu SEETHES As Trump Blocks New Iran Attack Plan"
+  },
+  {
+    "query": "What did Donald Trump say about Lindsey Graham at his funeral?",
+    "ground_truth_chunk_texts": [
+      "that is, of course, no longer. His funeral was held today. This is what Donald Trump had to say about Lindsey Graham. A giant of the United States Senate, a true American original, who left us much too soon.",
+      "And that can only be the one and only Lindsey Graham. He was extremely hawkish. I will tell you, he never saw a war that he didn't like. He never saw a war that he didn't like."
+    ],
+    "ground_truth_answer": "At Lindsey Graham's funeral, held the day of this discussion, Donald Trump called him 'a giant of the Senate.' The speech described Graham as extremely hawkish, someone who never saw a war he didn't like.",
+    "video_source": "'Tehran wants war' - US base in Jordan intercepts Iranian missiles",
+    "video_title_guess": "'Tehran wants war' - US base in Jordan intercepts Iranian missiles"
+  }
+]

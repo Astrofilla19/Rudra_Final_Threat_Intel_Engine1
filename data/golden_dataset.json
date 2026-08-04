@@ -1,20 +1,43 @@
 [
     {
-        "query": " Which city was exhumed from mass graves of bodies near Kyiv?",
-        "ground_truth_chunk_ids": ["7cfe075f_chunk_0013", "7cfe075f_chunk_0000"],
-        "ground_truth_answer": "in bucha, for example , 30 km north of Kyiv more than 450 bodies were exhumed from mass graves",
-        "video_source": "Ukraine war-crimes investigators run short on time and money"
+        "query": "What joint military action did the US and Saudi Arabia take against militia in Iraq?",
+        "ground_truth_chunk_ids": [
+            "78bdf971-74f7-5cc1-9aa5-f1994c029b8c"
+        ],
+        "ground_truth_answer": "Hours before Iran launched missiles at American forces, US Central Command said it had worked with Saudi Arabia to strike sites in Iraq used by Tehran-backed militia that had been launching attacks in recent days.",
+        "video_source": "'Surprise attack' by Iran | Sean Bell analysis"
     },
     {
-        "query": "TOP TAKEAWAYS FROM THE UKRAINE RECOVERY CONFERENCE",
-        "ground_truth_chunk_ids": ["6d053f5d_chunk_0005","6d053f5d_chunk_0011"],
-        "ground_truth_answer": "Nearly 200 agreements, understandings, and letters of intent were signed at the Ukraine Recovery Conference in Gdańsk, which drew around 7,500 participants, 70 state delegations, and 30 international organizations.",
-        "video_source": "State of Emergency in Crimea after massive Ukrainian strike | World News Tonight"
+        "query": "Why are US officials investigating whether Russia is helping Iran target CIA facilities?",
+        "ground_truth_chunk_ids": [
+            "679232fa-67c7-5742-9e82-4c80cea0ec87"
+        ],
+        "ground_truth_answer": "Multiple CIA facilities in the Middle East, including one in Riyadh and one in eastern Iraq, have been attacked by Iranian drones during the war, prompting US officials to investigate whether Russia aided the strikes by providing targeting information.",
+        "video_source": "U.S. military pauses nightly Iran strikes"
     },
     {
-        "query": "Which high-ranking Ukraninan officer has been announced to prison for whole life",
-        "ground_truth_chunk_ids": ["39e959bb_chunk_0037", "39e959bb_chunk_0000"],
-        "ground_truth_answer": "A former high-ranking Ukrainian intelligence officer, Dmytro Kozyura, has been sentenced to life in prison for spying for Russia. Once a counter-terrorism chief in Kyiv's security service, he was convicted of high treason for sharing state secrets with Moscow. ",
-        "video_source": "How Russia turns Ukrainians into spies | Global News Podcast"
+        "query": "Has Saudi Arabia publicly claimed responsibility for any strikes since the war with Iran began?",
+        "ground_truth_chunk_ids": [
+            "64902f5c-8208-5599-87d5-4f308bf4300e"
+        ],
+        "ground_truth_answer": "US and Saudi warplanes carried out strikes against Iran-backed militants in Iraq who had launched more than two dozen drone attacks in recent days, marking the first time Saudi Arabia has publicly claimed responsibility for any strike since the war began.",
+        "video_source": "US, Saudi Launch Strikes On Iran-Aligned Targets In Iraq After Wave Of Attacks In 'Last 72 Hours'"
+    },
+    {
+        "query": "Which US military installations did the US quietly relocate troops away from, and why?",
+        "ground_truth_chunk_ids": [
+            "60a03f45-c38a-584f-ac11-4904e341bdb4"
+        ],
+        "ground_truth_answer": "The US quietly relocated several hundred service members from major installations in Qatar and Bahrain, including the Al Udeid base in Qatar, which had previously been targeted by Iran toward the end of the 12-day war in June.",
+        "video_source": "US-Iran Tensions: US Relocates Troops from Qatar, Bahrain Bases to Reduce Risk | WION"
+    },
+    {
+        "query": "What did Donald Trump say about Lindsey Graham at his funeral?",
+        "ground_truth_chunk_ids": [
+            "20ae717c-9d0a-562b-a686-003982860d6e",
+            "06eca0ec-f99a-53b2-b4e1-06ef0f1c9ae0"
+        ],
+        "ground_truth_answer": "At Lindsey Graham's funeral, held the day of this discussion, Donald Trump called him 'a giant of the Senate.' The speech described Graham as extremely hawkish, someone who never saw a war he didn't like.",
+        "video_source": "'Tehran wants war' - US base in Jordan intercepts Iranian missiles"
     }
 ]

@@ -56,9 +56,8 @@ def search_for_ids(search_phrase: str, top_k: int = 3):
 if __name__ == "__main__":
     # Target phrase used to find chunk IDs when populating golden_dataset.json
     target_phrase = (
-        "A former high-ranking Ukrainian intelligence officer, Dmytro Kozyura, "
-        "has been sentenced to life in prison for spying for Russia. Once a "
-        "counter-terrorism chief in Kyiv's security service, he was convicted of "
-        "high treason for sharing state secrets with Moscow."
+      "the Americans. In 1979, during the eight years of the sacred defense, especially toward its final years,"
+      " we witnessed their direct crimes. Each time they committed a crime, they received a decisive response, "
+      "and this time will be no different."
     )
     search_for_ids(target_phrase)

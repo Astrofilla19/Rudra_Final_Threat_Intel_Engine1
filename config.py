@@ -34,7 +34,7 @@ else:
 # ---------------------------------------------------------
 EMBEDDING_MODEL_NAME = "all-MiniLM-L6-v2"
 WHISPER_MODEL_NAME = "large-v3-turbo"
-OLLAMA_MODEL_NAME = "qwen2.5:32b"
+OLLAMA_MODEL_NAME = "llama3:latest"
 
 # ---------------------------------------------------------
 # VECTOR STORE CONFIGURATION (QDRANT)
