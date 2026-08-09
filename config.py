@@ -45,6 +45,6 @@ COLLECTION_NAME = "threat_intel_videos"
 # OBSERVABILITY CONFIGURATION (LANGFUSE)
 # ---------------------------------------------------------
 # MUST be injected directly into os.environ for the Langfuse SDK to detect them
-os.environ["LANGFUSE_PUBLIC_KEY"] = "pk-lf-436a2e8a-78bd-4c0c-8ca9-f367b265f7c6"
-os.environ["LANGFUSE_SECRET_KEY"] = "sk-lf-2183771c-d208-4497-b77a-50589b6e0692"
-os.environ["LANGFUSE_HOST"] = "https://jp.cloud.langfuse.com"
+os.environ["LANGFUSE_PUBLIC_KEY"] = ""
+os.environ["LANGFUSE_SECRET_KEY"] = ""
+os.environ["LANGFUSE_HOST"] = ""
